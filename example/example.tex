@@ -1,0 +1,139 @@
+% Copyright 2013 by Michael Fiedler <michael.fiedler87@gmx.de>
+%
+% This file may be distributed and/or modified
+%
+% 1. under the LaTeX Project Public License and/or
+% 2. under the GNU Public License.
+\documentclass[12pt]{beamer}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{url}
+\usetheme{Welitsch}
+
+\title{\LaTeX{} Beamer theme ``Welitsch''\footnote{\url{http://github.com/mfiedler/LaTeX-Beamer-theme-Welitsch}}}
+\subtitle{Example slides}
+\author{Michael Fiedler\footnote{\url{mailto:michael.fiedler87@gmx.de}}}
+\date{\today}
+
+% Show the table of contents before each section
+\AtBeginSection[]{
+	\begin{frame}
+		\frametitle{Outline}
+		\tableofcontents[currentsection]
+	\end{frame}
+}
+
+\begin{document}
+
+\maketitle
+
+
+\begin{frame}
+	\frametitle{Outline}
+	\tableofcontents
+\end{frame}
+
+
+\section{Some section}
+\begin{frame}
+\frametitle{Some content}
+\framesubtitle{A subtitle}
+
+Here are the three different block types:
+
+\begin{block}{Block}
+Some text
+\end{block}
+
+\begin{exampleblock}{Example block}
+Some text
+\end{exampleblock}
+
+\begin{alertblock}{Alert block}
+Some text. \alert{ALERT!}
+\end{alertblock}
+\end{frame}
+
+\begin{frame}
+\frametitle{Itemize}
+
+\begin{itemize}
+\item some item
+\begin{itemize}
+\item a subitem
+\begin{itemize}
+\item a subsubitem
+\item another subsubitem
+\end{itemize}
+\item another subitem
+\end{itemize}
+\item another item
+\item last item
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Enumerations and cross references}
+
+Nested enumerations:
+
+\begin{enumerate}
+\item first item
+\begin{enumerate}
+\item foo
+\item bar \label{bar}
+\begin{enumerate}
+\item first subitem
+\item second subitem
+\end{enumerate}
+\item more text
+\begin{enumerate}
+\item foobar
+\item labeled item \label{foobar}
+\end{enumerate}
+\end{enumerate}
+\item second first-level item \label{foo}
+\begin{enumerate}
+\item some
+\item text
+\end{enumerate}
+\end{enumerate}
+
+You can also cross reference the enumerate items, e.\,g. \ref{foo}, \ref{bar} or \ref{foobar}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Welitsch}
+
+\begin{figure}
+\centering
+\includegraphics[width=0.4\textwidth]{welitsch_coat_of_arms}
+\caption{
+Coat of arms of Welitsch\cite{commons:welitsch}
+}
+\end{figure}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Questions?}
+\begin{center}
+\Huge \textbf{Questions?}
+\end{center}
+\begin{center}
+\url{http://github.com/mfiedler/LaTeX-Beamer-theme-Welitsch}
+\end{center}
+\end{frame}
+
+
+\section{References}
+\begin{frame}{References}
+\bibliographystyle{plain}
+\bibliography{literature}
+\end{frame}
+
+\end{document}
